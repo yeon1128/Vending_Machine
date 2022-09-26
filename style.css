@@ -1,3 +1,8 @@
+*, body {
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+}
+
 /* reset */
 p,
 h3,
@@ -26,24 +31,24 @@ fieldset {
 
 /* scroll bar */
 /* width */
-.list-select::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 4px;
     height: 79px;
 }
 
 /* Track */
-.list-select::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
     background: #EAE8FE;
 }
 
 /* Handle */
-.list-select::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     background: #fff;
     border-radius: 50px;
 }
 
 /* Handle on hover */
-.list-select::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover {
     background: #fff;
 }
 
@@ -92,25 +97,65 @@ fieldset {
 /* drink */
 /* 상단 */
 .list-drink {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 94px);
+    grid-template-rows: repeat(2, 130px);
     column-gap: 12px;
     row-gap: 12px;
+    margin: 0 auto;
 }
 
 .drink {
-    background-color: gray;
-    /* width: 94px; */
+    /* background-color: gray; */
+    text-align: center;
+
+}
+
+.button-drink {
+    width: 94px;
+    height: 130px;
+    background-color: #fff;
+    border: 0;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+    border-radius: 10px;
+}
+
+.img-drink {
+    width: 35px;
+    height: 64px;
+    padding-right: auto;
+    
+}
+
+.name-drink {
+    display: block;
+    font-size: 9px;
+    font-weight: 500;
+    margin-top: 7px;
+}
+
+.price-drink {
+    display: block;
+    background-color: #6327FE;
+    border-radius: 50px;
+    width: 70px;
+    height: 22px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 22px;
+    margin: 7px auto 0;
 }
 
 /* 하단 */
 .description-drink {
-    background-color: antiquewhite;
-    /* display: grid; */
-    /* grid-template-columns: repeat(2, 1fr); */
-    /* grid-template-rows: repeat(3, 1fr); */
+    display: grid;
+    grid-template-columns: 200px 94px;
+    grid-template-rows: 32px 32px 106px;
+    column-gap: 12px;
+    row-gap: 12px;
+    margin: 0 auto;
 }
 
 /* --balance-- */
@@ -119,9 +164,16 @@ fieldset {
     justify-content: space-between;
 }
 
+.label-balance {
+    font-size: 14px;
+    line-height: 25px;
+}
+
 #balance {
     border: 0;
     background-color: #EAE8FE;
+    font-size: 14px;
+    text-align: right;
 }
 
 .text-balance {
@@ -129,6 +181,26 @@ fieldset {
     justify-content: space-between;
     background-color: #EAE8FE;
     width: 200px;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.button-balance {
+    width: 94px;
+    height: 33px;
+    background-color: #fff;
+    border: 0;
+    filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+    border-radius: 5px;
+}
+
+.title-balance {
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.num-balance {
+    padding-left: 100px;
 }
 
 /* --cash-- */
@@ -144,32 +216,126 @@ fieldset {
 }
 
 .list-select {
+    font-family: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* justify-content: space-around; */
     background-color: #EAE8FE;
     overflow-y: scroll;
     width: 200px;
     height: 106px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
 }
 
 .button-select {
     background-color: #6327FE;
     border: 0;
+    border-radius: 5px;
     color: #fff;
     width: 94px;
     height: 106px;
     cursor: pointer;
+    
+}
+
+.img2-drink {
+    width: 18px;
+    height: 33px;
+
+}
+
+.name2-drink {
+    line-height: 46px;
+    font-size: 9px;
+    /* flex-grow: 2; */
+}
+
+.count-drink {
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.box-select {
+    display: flex;
+    background-color: #fff;
+    width: 170px;
+    height: 46px;
+    /* text-align: center; */
+    /* vertical-align: middle; */
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    margin: 3px;
 }
 
 /* cash */
-.cash {
+.label-cash {
     background-color: #EAE8FE;
+}
+
+#cash {
+    border: 0;
+    background-color: #EAE8FE;
+}
+
+.text-cash {
+    background-color: #EAE8FE;
+    margin: 9px 27px;
     width: 306px;
     height: 32px;
-    margin: 9px 27px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input-cash {
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+    width: 200px;
+    color: #BDBDBD;
+    font-size: 13px;
 }
 
 /* price */
-.img-price {
+.get-drink {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 13px 0;
+}
+
+.total-price {
     background-color: #EAE8FE;
     width: 306px;
     height: 364px;
+    overflow-y: scroll;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+}
+
+.total-price ul {
+    display: flex;
+    flex-direction: column;
+    column-gap: 6px;
+    margin: 12px;
+}
+
+.total-price ul li {
+    width: 276px;
+    /* flex-basis: 200px; */
+}
+
+.text-price {
+    font-family: inherit;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 6px;
 }
