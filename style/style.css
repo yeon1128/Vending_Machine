@@ -12,6 +12,10 @@ body {
   overflow: hidden;
 }
 
+.img-drink {
+  display: block;
+}
+
 /* layout */
 body {
   background-color: #eae8fe;
@@ -58,7 +62,7 @@ body {
 
 .cont-buy-drink .info-balance,
 .cont-buy-drink .input-cash,
-.cont-buy-drink .list-select {
+.cont-buy-drink .list-staged {
   grid-column: 1/3;
   border-radius: 5px;
 }
@@ -79,7 +83,6 @@ body {
 .cont-buy-drink .button-return,
 .cont-buy-drink .button-get,
 .cont-buy-drink .button-put {
-  /* background-color: #fff; */
   box-shadow: 0px 0px 4px rgb(0 0 0 / 25%);
   border-radius: 5px;
   padding: 6px 0;
@@ -103,6 +106,52 @@ body {
   padding: 6px;
 }
 
+.cont-buy-drink .list-staged {
+  display: flex;
+  flex-direction: column;
+  background-color: #eae8fe;
+  overflow-y: scroll;
+  border-radius: 5px;
+  padding: 12px;
+  height: 106px;
+}
+
+.list-staged-item {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.img-drink,
+.txt-drink {
+  float: left;
+}
+
+.list-staged-item .img-drink {
+  width: 18px;
+  height: 32px;
+}
+
+.list-staged-item .txt-drink {
+  margin-left: 10px;
+  line-height: 32px;
+  font-size: 9px;
+}
+
+.list-staged-item .count-drink {
+  float: right;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 자판기 음료 리스트 */
 .vending-machine .list-drink {
   display: grid;
   grid-template-columns: repeat(3, 94px);
@@ -182,49 +231,6 @@ body {
 .form-select {
   display: flex;
   justify-content: space-between;
-}
-
-.list-select {
-  font-family: inherit;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #eae8fe;
-  overflow-y: scroll;
-  width: 200px;
-  height: 106px;
-  border: 1px solid #bdbdbd;
-  border-radius: 5px;
-}
-
-.img2-drink {
-  width: 18px;
-  height: 33px;
-}
-
-.name2-drink {
-  line-height: 46px;
-  font-size: 9px;
-}
-
-.count-drink {
-  border: 1px solid #bdbdbd;
-  border-radius: 5px;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-}
-
-.box-select {
-  display: flex;
-  background-color: #fff;
-  width: 170px;
-  height: 46px;
-  align-items: center;
-  justify-content: space-evenly;
-  border-radius: 5px;
-  margin: 3px;
 }
 
 /* cash */
