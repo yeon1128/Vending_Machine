@@ -120,7 +120,6 @@ body {
   background-color: #fff;
   padding: 8px;
   border-radius: 5px;
-  width: 100%;
 }
 
 .img-drink,
@@ -228,43 +227,26 @@ body {
   padding: 25px 27px 26px;
 }
 
-.form-select {
-  display: flex;
-  justify-content: space-between;
-}
-
-/* cash */
-
-/* price */
-.get-drink {
-  display: flex;
-  justify-content: center;
+.title-myitem {
+  display: block;
+  line-height: 20px;
+  text-align: center;
   font-size: 14px;
-  font-weight: 700;
-  margin: 13px 0;
+  margin-bottom: 13px;
 }
 
-.total-price {
+.list-get-drink {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
   background-color: #eae8fe;
-  width: 306px;
-  height: 364px;
+  height: 368px;
   overflow-y: scroll;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
 }
 
-.total-price ul {
-  display: flex;
-  flex-direction: column;
-  column-gap: 6px;
-  margin: 12px;
-}
-
-.total-price ul li {
-  width: 276px;
-}
-
-.text-price {
+.text-total {
   font-family: inherit;
   display: flex;
   justify-content: flex-end;
