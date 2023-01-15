@@ -28,11 +28,11 @@ body {
   height: 100%;
 }
 
-.main-wrapper {
+#app .main-wrapper {
   display: flex;
   justify-content: center;
   margin-top: 67px;
-  margin-bottom: 171px;
+  gap: 28px;
 }
 
 .wrapper-drink {
@@ -270,6 +270,7 @@ body {
   margin-top: 6px;
 }
 
+/* 반응형 */
 @media only screen and (max-width: 768px) {
   body {
     background-color: #fff;
