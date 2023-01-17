@@ -160,11 +160,11 @@ body {
   margin: 0 auto;
 }
 
-.list-drink .drink {
+.list-drink li {
   text-align: center;
 }
 
-.drink .button-drink {
+.list-drink li .button-drink {
   width: 94px;
   height: 130px;
   background-color: #fff;
@@ -173,20 +173,20 @@ body {
   border-radius: 10px;
 }
 
-.img-drink {
+.list-drink li .img-drink {
   width: 35px;
   height: 64px;
   padding-right: auto;
 }
 
-.name-drink {
+.list-drink li .name-drink {
   display: block;
   font-size: 9px;
   font-weight: 500;
   margin-top: 7px;
 }
 
-.price-drink {
+.list-drink li .price-drink {
   display: block;
   background-color: #6327fe;
   border-radius: 50px;
