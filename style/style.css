@@ -16,7 +16,7 @@ body {
   display: block;
 }
 
-/* layout */
+/* 레이아웃 */
 body {
   background-color: #eae8fe;
 }
@@ -117,28 +117,37 @@ body {
 }
 
 .list-staged-item {
-  background-color: #fff;
+  width: 100%;
   padding: 8px;
+}
+
+.list-staged li {
+  background-color: #fff;
+  width: 100%;
   border-radius: 5px;
 }
 
-.img-drink,
-.txt-drink {
+.list-staged li + li {
+  margin-top: 6px;
+}
+
+.list-staged .img-drink,
+.list-staged .txt-drink {
   float: left;
 }
 
-.list-staged-item .img-drink {
+.list-staged .img-drink {
   width: 18px;
   height: 32px;
 }
 
-.list-staged-item .txt-drink {
+.list-staged .txt-drink {
   margin-left: 10px;
   line-height: 32px;
   font-size: 9px;
 }
 
-.list-staged-item .count-drink {
+.list-staged .count-drink {
   float: right;
   border: 1px solid #bdbdbd;
   border-radius: 5px;
@@ -161,42 +170,35 @@ body {
 }
 
 .list-drink li {
-  text-align: center;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
 .list-drink li .button-drink {
-  width: 94px;
-  height: 130px;
-  background-color: #fff;
-  border: 0;
-  filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
-  border-radius: 10px;
+  width: 100%;
+  padding: 11px 12px 9px;
 }
 
-.list-drink li .img-drink {
+.button-drink .img-drink {
+  margin: 0 auto;
   width: 35px;
   height: 64px;
-  padding-right: auto;
 }
 
-.list-drink li .name-drink {
-  display: block;
+.button-drink .name-drink {
   font-size: 9px;
   font-weight: 500;
-  margin-top: 7px;
 }
 
-.list-drink li .price-drink {
+.button-drink .price-drink {
   display: block;
   background-color: #6327fe;
   border-radius: 50px;
-  width: 70px;
-  height: 22px;
   color: #fff;
   font-size: 12px;
-  text-align: center;
-  line-height: 22px;
-  margin: 7px auto 0;
+  margin-top: 7px;
+  padding: 5px 15px;
 }
 
 /* 구매 관련 정보 */
