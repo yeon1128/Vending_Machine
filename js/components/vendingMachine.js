@@ -12,6 +12,7 @@ class VendingMachine {
     const myinfo = document.querySelector(".my-info");
     this.myMoney = myinfo.querySelector(".num-cash");
     this.gotList = myinfo.querySelector(".list-get-drink");
+    this.txtTotal = myinfo.querySelector(".text-total");
   }
 
   stagedItemGenerator(target) {
@@ -137,6 +138,16 @@ class VendingMachine {
       }
 
       this.stagedList.innerHTML = null;
+
+      this.gotList.querySelectorAll("li").forEach((itemGot) => {
+        totalPrice +=
+          itemGot.dataset.price *
+          parseInt(itemGot.querySelector(".count-drink").textContent);
+      });
+
+      this.txtTotal.textContent = `총금액: ${new Intl.NumberFormat().format(
+        totalPrice
+      )}원`;
     });
   }
 }
