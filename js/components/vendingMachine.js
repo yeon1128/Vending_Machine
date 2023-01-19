@@ -10,7 +10,6 @@ class VendingMachine {
     const stagedItem = document.createElement("li");
     stagedItem.dataset.item = target.dataset.item;
     stagedItem.dataset.price = target.dataset.price;
-    console.log(target.dataset.img);
 
     stagedItem.innerHTML = `
     <button type="button" class="list-staged-item">
@@ -19,6 +18,7 @@ class VendingMachine {
       <span class="count-drink">1</span>
     </button>
     `;
+
     this.stagedList.appendChild(stagedItem);
   }
 
@@ -40,6 +40,7 @@ class VendingMachine {
         let isStaged = false;
 
         console.log(targetEl);
+
         if (balanceVal >= targetElPrice) {
           this.balance.textContent =
             new Intl.NumberFormat().format(balanceVal - targetElPrice) + "원";
@@ -57,6 +58,14 @@ class VendingMachine {
           }
 
           targetEl.dataset.count--;
+
+          if (parseInt(targetEl.dataset.count) === 0) {
+            targetEl.parentElement.classList.add("sold-out");
+            const warning = document.createElement("em");
+            warning.textContent = "해당 음료는 품절입니다.";
+            warning.classList.add("ir");
+            targetEl.parentElement.insertBefore(warning, targetEl);
+          }
         } else {
           alert("잔액 부족");
         }
