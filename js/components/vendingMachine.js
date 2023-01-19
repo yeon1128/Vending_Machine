@@ -6,6 +6,7 @@ class VendingMachine {
     this.balance = vendingMachine.querySelector(".num-balance");
     this.btnPut = vendingMachine.querySelector(".button-put");
     this.inputCostEl = vendingMachine.querySelector(".input-cash");
+    this.btnReturn = vendingMachine.querySelector(".button-return");
 
     const myinfo = document.querySelector(".my-info");
     this.myMoney = myinfo.querySelector(".num-cash");
@@ -96,6 +97,18 @@ class VendingMachine {
           alert("소지금 부족");
         }
         this.inputCostEl.value = null;
+      }
+    });
+
+    // 거스름돈 반환 기능
+    this.btnReturn.addEventListener("click", (e) => {
+      const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
+      const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", ""));
+
+      if (balanceVal) {
+        this.myMoney.textContent =
+          new Intl.NumberFormat().format(myMoneyVal + balanceVal) + "원";
+        this.balance.textContent = "원";
       }
     });
   }
