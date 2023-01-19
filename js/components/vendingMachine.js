@@ -4,6 +4,11 @@ class VendingMachine {
     this.itemList = vendingMachine.querySelector(".list-drink");
     this.stagedList = vendingMachine.querySelector(".list-staged");
     this.balance = vendingMachine.querySelector(".num-balance");
+    this.btnPut = vendingMachine.querySelector(".button-put");
+    this.inputCostEl = vendingMachine.querySelector(".input-cash");
+
+    const myinfo = document.querySelector(".my-info");
+    this.myMoney = myinfo.querySelector(".num-cash");
   }
 
   stagedItemGenerator(target) {
@@ -27,6 +32,7 @@ class VendingMachine {
   }
 
   bindEvents() {
+    // 자판기 메뉴 기능
     const btnsCola = this.itemList.querySelectorAll("button");
 
     btnsCola.forEach((item) => {
@@ -70,6 +76,27 @@ class VendingMachine {
           alert("잔액 부족");
         }
       });
+    });
+
+    // 입금 기능
+    this.btnPut.addEventListener("click", (e) => {
+      const inputCost = parseInt(this.inputCostEl.value);
+      const myMoneyVal = parseInt(this.myMoney.textContent.replaceAll(",", ""));
+      const balanceVal = parseInt(this.balance.textContent.replaceAll(",", ""));
+
+      if (inputCost) {
+        if (inputCost <= myMoneyVal && inputCost > 0) {
+          this.myMoney.textContent =
+            new Intl.NumberFormat().format(myMoneyVal - inputCost) + "원";
+          this.balance.textContent =
+            new Intl.NumberFormat().format(
+              (balanceVal ? balanceVal : 0) + inputCost
+            ) + "원";
+        } else {
+          alert("소지금 부족");
+        }
+        this.inputCostEl.value = null;
+      }
     });
   }
 }
