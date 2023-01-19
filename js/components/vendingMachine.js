@@ -135,6 +135,8 @@ class VendingMachine {
           this.gotList.append(itemStaged);
         }
       }
+
+      this.stagedList.innerHTML = null;
     });
   }
 }
