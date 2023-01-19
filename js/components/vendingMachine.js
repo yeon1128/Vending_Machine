@@ -7,9 +7,11 @@ class VendingMachine {
     this.btnPut = vendingMachine.querySelector(".button-put");
     this.inputCostEl = vendingMachine.querySelector(".input-cash");
     this.btnReturn = vendingMachine.querySelector(".button-return");
+    this.btnGet = vendingMachine.querySelector(".button-get");
 
     const myinfo = document.querySelector(".my-info");
     this.myMoney = myinfo.querySelector(".num-cash");
+    this.gotList = myinfo.querySelector(".list-get-drink");
   }
 
   stagedItemGenerator(target) {
@@ -109,6 +111,29 @@ class VendingMachine {
         this.myMoney.textContent =
           new Intl.NumberFormat().format(myMoneyVal + balanceVal) + "원";
         this.balance.textContent = "원";
+      }
+    });
+
+    // 획득 기능
+    this.btnGet.addEventListener("click", (e) => {
+      let isGot = false;
+      let totalPrice = 0;
+
+      for (const itemStaged of this.stagedList.querySelectorAll("li")) {
+        for (const itemGot of this.gotList.querySelectorAll("li")) {
+          let itemGotCount = itemGot.querySelector(".count-drink");
+          if (itemStaged.dataset.item === itemGot.dataset.item) {
+            itemGotCount.textContent =
+              parseInt(itemGotCount.textContent) +
+              parseInt(itemStaged.querySelector(".count-drink").textContent);
+            isGot = true;
+            break;
+          }
+        }
+
+        if (!isGot) {
+          this.gotList.append(itemStaged);
+        }
       }
     });
   }
