@@ -41,7 +41,8 @@ body {
 
 #app .vending-machine,
 #app .my-info {
-  flex-basis: 360px;
+  /* flex-basis: 360px; */
+  width: 360px;
 }
 
 /* 벤딩머신 */
@@ -256,6 +257,15 @@ body {
   margin-bottom: 13px;
 }
 
+.text-total {
+  font-family: inherit;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+
 .list-get-drink {
   display: flex;
   flex-direction: column;
@@ -267,13 +277,47 @@ body {
   border-radius: 5px;
 }
 
-.text-total {
-  font-family: inherit;
-  display: flex;
-  justify-content: flex-end;
-  font-size: 12px;
-  font-weight: 500;
+.list-get-drink .list-staged-item {
+  width: 100%;
+  padding: 8px;
+}
+
+.list-get-drink li {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.list-get-drink li + li {
   margin-top: 6px;
+}
+
+.list-get-drink .img-drink,
+.list-get-drink .txt-drink {
+  float: left;
+}
+
+.list-get-drink .img-drink {
+  width: 18px;
+  height: 32px;
+}
+
+.list-get-drink .txt-drink {
+  margin-left: 10px;
+  line-height: 32px;
+  font-size: 9px;
+}
+
+.list-get-drink .count-drink {
+  float: right;
+  border: 1px solid #bdbdbd;
+  border-radius: 5px;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 반응형 */
