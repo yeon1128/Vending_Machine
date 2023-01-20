@@ -14,13 +14,17 @@
   </head>
 
   <body>
+    <a href="#machine" class="skip">음료 자판기 바로가기</a>
+    <a href="#my-cash" class="skip">소지금 바로가기</a>
+    <a href="#my-drink" class="skip">획득한 음료 정보 바로가기</a>
+
     <article id="app" class="container">
       <h1 class="app-title">
         <img src="./images/Logo_img.png" alt="ColaCola" />
       </h1>
       <main class="main-wrapper">
         <h2 class="ir">vending-machine</h2>
-        <section class="vending-machine">
+        <section id="machine" class="vending-machine">
           <h3 class="ir">음료 정보</h3>
           <ul class="list-drink"></ul>
 
@@ -39,13 +43,13 @@
 
         <section class="my-info">
           <h3 class="ir">나의 소지금 및 획득한 음료 정보</h3>
-          <div class="my-cont-cash">
+          <div id="my-cash" class="my-cont-cash">
             <p class="text-cash">
               소지금: <span class="num-cash">25,000 원</span>
             </p>
           </div>
 
-          <div class="my-cont-item">
+          <div id="my-drink" class="my-cont-item">
             <h3 class="title-myitem">획득한 음료</h3>
             <ul class="list-get-drink"></ul>
             <div class="text-total">총 금액: 0원</div>
